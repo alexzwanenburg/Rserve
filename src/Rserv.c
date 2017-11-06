@@ -146,9 +146,18 @@ the use of DT_LARGE/XT_LARGE.
 #define unix
 #endif
 
-/* FORKED is default for unix platforms */
+/* FORKED is default for unix platforms 
 #if defined unix && !defined COOPERATIVE && !defined FORKED
 #define FORKED
+#endif
+*/
+
+#if defined unix && !defined COOPERATIVE
+#define COOPERATIVE
+#endif
+
+#if defined FORKED
+#undef FORKED
 #endif
 
 #ifndef CONFIG_FILE

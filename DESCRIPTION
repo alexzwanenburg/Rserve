@@ -1,9 +1,9 @@
-Package: Rserve
-Version: 1.7
+Package: Rservecoop
+Version: 1.7.4
 Title: Binary R server
 Author: Simon Urbanek <Simon.Urbanek@r-project.org>
 Maintainer: Simon Urbanek <Simon.Urbanek@r-project.org>
-Depends: R (>= 1.5.0)
+Depends: R (>= 3.3.0)
 Suggests: RSclient
 SystemRequirements: libR, GNU make
 Description: Rserve acts as a socket server (TCP/IP or local sockets) 
@@ -17,3 +17,4 @@ Description: Rserve acts as a socket server (TCP/IP or local sockets)
 	     is included in this package as well.
 License: GPL-2 | file LICENSE
 URL: http://www.rforge.net/Rserve/
+Biarch: true
