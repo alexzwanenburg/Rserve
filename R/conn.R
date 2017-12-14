@@ -5,7 +5,7 @@ Rserve <- function(debug=FALSE, port, args=NULL, quote=(length(args) > 1), wait,
     arch <- .Platform$r_arch
     if (is.null(arch) || !nzchar(arch)) arch <- ""
     ffn <- if (debug) "Rserve_d.exe" else "Rserve.exe"
-    fn <- shortPathName(if (nzchar(arch)) system.file("libs", arch, ffn, package="Rserve") else system.file(package="Rserve", ffn))
+    fn <- shortPathName(if (nzchar(arch)) system.file("libs", arch, ffn, package="Rservecoop") else system.file(package="Rservecoop", ffn))
     if (!nchar(fn) || !file.exists(fn))
       stop("Cannot find ", ffn)
     else {
@@ -21,7 +21,7 @@ Rserve <- function(debug=FALSE, port, args=NULL, quote=(length(args) > 1), wait,
     }
   }
   name <- if (!debug) "Rserve" else "Rserve.dbg"
-  fn <- system.file(package="Rserve", "libs", .Platform$r_arch, name)
+  fn <- system.file(package="Rservecoop", "libs", .Platform$r_arch, name)
   if (!nchar(fn)) fn <- name
   if (!missing(port)) args <- c( args, "--RS-port", as.integer(port) )
   if (length(args)) fn <- paste(fn, paste(if (isTRUE(quote)) shQuote(args, "sh") else args, collapse=' '))
